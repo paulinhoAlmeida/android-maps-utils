@@ -303,7 +303,7 @@ public class DefaultClusterRenderer<T extends ClusterItem> implements ClusterRen
 
         public void setMapZoom(float zoom) {
             this.mMapZoom = zoom;
-            this.mSphericalMercatorProjection = new SphericalMercatorProjection(256 * Math.pow(2, zoom));
+            this.mSphericalMercatorProjection = new SphericalMercatorProjection(256 * Math.pow(2, Math.min(zoom, mZoom)));
         }
 
         @SuppressLint("NewApi")
